@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RedState : IState
@@ -19,11 +17,10 @@ public class RedState : IState
     public void Update()
     {
         manager.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
-        manager.state.TransitionTo(manager.state.blueState);
     }
 
-    public void Exit() 
-    { 
-        
+    public void Exit()
+    {
+
     }
 }

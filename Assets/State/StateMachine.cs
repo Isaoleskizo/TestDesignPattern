@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 [Serializable]
-public class StateMachine 
+public class StateMachine
 {
     public IState CurrentState { get; private set; }
 
@@ -15,7 +12,7 @@ public class StateMachine
 
 
     //Sujet
-    public event Action<IState> stateChanged;
+    //public event Action<IState> stateChanged;
 
 
     //Constructeur
@@ -31,24 +28,23 @@ public class StateMachine
         CurrentState = state;
         state.Enter();
 
-        stateChanged?.Invoke(state);
+        //stateChanged?.Invoke(state);
     }
 
     public void TransitionTo(IState nextState)
     {
         CurrentState.Exit();
         CurrentState = nextState;
-        
 
         nextState.Enter();
 
-        stateChanged?.Invoke(nextState);
+        //stateChanged?.Invoke(nextState);
     }
 
     public void Update()
     {
-        if(CurrentState!= null) 
-        { 
+        if (CurrentState != null)
+        {
             CurrentState.Update();
         }
     }

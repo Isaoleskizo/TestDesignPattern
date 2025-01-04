@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlueState : IState
@@ -22,8 +20,8 @@ public class BlueState : IState
         manager.state.TransitionTo(manager.state.whiteState);
     }
 
-    public void Exit() 
-    { 
-    
+    public void Exit()
+    {
+
     }
 }
