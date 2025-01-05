@@ -17,6 +17,7 @@ public class RedState : IState
     public void Update()
     {
         manager.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
+        manager.state.TransitionTo(manager.state.blueState);
     }
 
     public void Exit()
